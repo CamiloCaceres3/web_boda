@@ -161,6 +161,18 @@ html[lang="es"] .hero h1 {
   font-weight: 700;
 }
 
+.hero-names {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.hero-ampersand {
+  font-size: 1.4rem;
+  color: var(--olive);
+  letter-spacing: 0.15rem;
+}
+
 .hero-date {
   color: var(--muted);
   margin-bottom: 0.9rem;
