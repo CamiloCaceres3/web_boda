@@ -14,11 +14,14 @@ const dictionary = {
     nav_registry: "Gifts",
     hero_eyebrow: "We’re getting married",
     hero_names: "Alejandra & Camilo",
-    hero_date: "July 25, 2026 · Paipa, Boyacá - Colombia",
+    hero_date: "25 • 07 • 2026 · Paipa, Boyacá - Colombia",
     hero_cta: "Celebrate with us",
-    story_title: "Our Story",
-    story_text:
-      "A short paragraph placeholder about how you met, your favorite adventures, and the joy that brought you here together.",
+    story_title: "Countdown",
+    countdown_subtitle: "Counting down to the big day.",
+    countdown_days: "Days",
+    countdown_hours: "Hours",
+    countdown_minutes: "Minutes",
+    countdown_seconds: "Seconds",
     schedule_title: "Schedule",
     schedule_ceremony: "Ceremony",
     schedule_ceremony_time: "3:00 PM · Bosque Hotel Estelar",
@@ -54,12 +57,12 @@ const dictionary = {
     registry_bank_title: "International transfer",
     registry_link: "https://revolut.me/camiloflij",
     footer_contact: "Questions? Email us at alecamimatri@gmail.com tel: to be defined",
-    footer_credit: "Made by Cami with vibecoding and a happy face.",
+    footer_credit: "Made by Cami with vibecoding 😁",
     footer_back: "Back to top",
   },
   es: {
     nav_home: "Inicio",
-    nav_story: "Historia",
+    nav_story: "Cuenta regresiva",
     nav_schedule: "Programa",
     nav_venue: "Lugar",
     nav_travel: "Viaje",
@@ -67,12 +70,15 @@ const dictionary = {
     nav_rsvp: "RSVP",
     nav_registry: "Regalos",
     hero_eyebrow: "Nos casamos",
-    hero_names: "Alejandra y Camilo",
-    hero_date: "25 de julio de 2026 · Paipa, Boyacá - Colombia",
+    hero_names: "Alejandra & Camilo",
+    hero_date: "25 • 07 • 2026 · Paipa, Boyacá - Colombia",
     hero_cta: "Celebra con nosotros",
-    story_title: "Nuestra historia",
-    story_text:
-      "Un breve párrafo sobre cómo se conocieron, sus aventuras favoritas y la alegría que los trajo hasta aquí.",
+    story_title: "Cuenta regresiva",
+    countdown_subtitle: "Cuenta regresiva para el gran día.",
+    countdown_days: "Días",
+    countdown_hours: "Horas",
+    countdown_minutes: "Minutos",
+    countdown_seconds: "Segundos",
     schedule_title: "Programa",
     schedule_ceremony: "Ceremonia",
     schedule_ceremony_time: "3:00 PM · Bosque Hotel Estelar",
@@ -108,7 +114,7 @@ const dictionary = {
     registry_bank_title: "Transferencia internacional",
     registry_link: "https://revolut.me/camiloflij",
     footer_contact: "¿Preguntas? Escríbenos a alecamimatri@gmail.com tel: por definir",
-    footer_credit: "Hecho por Cami con vibecoding y una carita feliz.",
+    footer_credit: "Hecho por Cami con vibecoding 😁",
     footer_back: "Volver arriba",
   },
 };
@@ -120,6 +126,10 @@ const applyTranslations = (lang) => {
     if (dictionary[lang][key]) {
       element.textContent = dictionary[lang][key];
     }
+  });
+
+  document.querySelectorAll(".language-toggle .lang-option").forEach((option) => {
+    option.classList.toggle("active", option.dataset.lang === lang);
   });
 };
 
@@ -159,8 +169,47 @@ document.querySelectorAll(".accordion-item").forEach((button) => {
   });
 });
 
+const countdownValues = {
+  days: document.querySelector('[data-countdown-value="days"]'),
+  hours: document.querySelector('[data-countdown-value="hours"]'),
+  minutes: document.querySelector('[data-countdown-value="minutes"]'),
+  seconds: document.querySelector('[data-countdown-value="seconds"]'),
+};
+
+const weddingDate = new Date(Date.UTC(2026, 6, 25, 20, 0, 0));
+
+const updateCountdown = () => {
+  const now = new Date();
+  const diff = weddingDate - now;
+  const totalSeconds = Math.max(0, Math.floor(diff / 1000));
+
+  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+  const seconds = totalSeconds % 60;
+
+  if (countdownValues.days) {
+    countdownValues.days.textContent = String(days).padStart(2, "0");
+  }
+  if (countdownValues.hours) {
+    countdownValues.hours.textContent = String(hours).padStart(2, "0");
+  }
+  if (countdownValues.minutes) {
+    countdownValues.minutes.textContent = String(minutes).padStart(2, "0");
+  }
+  if (countdownValues.seconds) {
+    countdownValues.seconds.textContent = String(seconds).padStart(2, "0");
+  }
+};
+
 let currentLanguage = "en";
 applyTranslations(currentLanguage);
+
+const hasCountdown = Object.values(countdownValues).some(Boolean);
+if (hasCountdown) {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
 
 languageToggle.addEventListener("click", () => {
   currentLanguage = currentLanguage === "en" ? "es" : "en";

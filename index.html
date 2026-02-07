@@ -4,12 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alejandra & Camilo | Boda</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -32,7 +26,9 @@
           <a href="#registry" data-i18n="nav_registry">Registry</a>
         </div>
         <button class="language-toggle" id="languageToggle" aria-label="Toggle language">
-          EN / ES
+          <span class="lang-option" data-lang="en">EN</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-option" data-lang="es">ES</span>
         </button>
       </nav>
     </header>
@@ -42,18 +38,33 @@
         <div class="hero-content">
           <p class="eyebrow" data-i18n="hero_eyebrow">We’re getting married</p>
           <h1 data-i18n="hero_names">Alejandra & Camilo</h1>
-          <p class="hero-date" data-i18n="hero_date">25 de julio de 2026 · Paipa, Boyacá - Colombia</p>
+          <p class="hero-date" data-i18n="hero_date">25 • 07 • 2026 · Paipa, Boyacá - Colombia</p>
           <a class="primary-button" href="#rsvp" data-i18n="hero_cta">Celebrate with us</a>
         </div>
       </section>
 
       <section class="section" id="story">
         <div class="section-heading">
-          <h2 data-i18n="story_title">Our Story</h2>
-          <p data-i18n="story_text">
-            A short paragraph placeholder about how you met, your favorite adventures, and the joy
-            that brought you here together.
-          </p>
+          <h2 data-i18n="story_title">Countdown</h2>
+          <p data-i18n="countdown_subtitle">Counting down to the big day.</p>
+        </div>
+        <div class="countdown" aria-live="polite">
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-value="days">00</span>
+            <span class="countdown-label" data-i18n="countdown_days">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-value="hours">00</span>
+            <span class="countdown-label" data-i18n="countdown_hours">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-value="minutes">00</span>
+            <span class="countdown-label" data-i18n="countdown_minutes">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-value="seconds">00</span>
+            <span class="countdown-label" data-i18n="countdown_seconds">Seconds</span>
+          </div>
         </div>
       </section>
 
@@ -131,8 +142,8 @@
             <h3 data-i18n="travel_transport">Transportation</h3>
             <p data-i18n="travel_transport_text">Mapa con la ruta desde Bogotá hasta Paipa.</p>
             <iframe
-              title="Ruta de Bogotá a Paipa"
-              src="https://www.google.com/maps?q=Bogot%C3%A1+to+Paipa&output=embed"
+              title="Ruta de Bogotá a Hotel Estelar Paipa"
+              src="https://www.google.com/maps?q=Bogot%C3%A1+to+Hotel+Estelar+Paipa+Centro+de+Convenciones&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
@@ -180,14 +191,21 @@
             Agradecemos su presencia, pero si desean contribuir estos son los datos:
           </p>
         </div>
-        <div class="registry-details">
-          <div class="card">
-            <h3 data-i18n="registry_list_title">Lista de regalos</h3>
+        <div class="accordion registry-accordion">
+          <button class="accordion-item" aria-expanded="false">
+            <span data-i18n="registry_list_title">Lista de regalos</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-panel">
             <p data-i18n="registry_list_text">Lista de regalos (por confirmar)</p>
             <p class="registry-handle" data-i18n="registry_handle">Llave Bre-B: @camicace</p>
           </div>
-          <div class="card">
-            <h3 data-i18n="registry_bank_title">Transferencia internacional</h3>
+
+          <button class="accordion-item" aria-expanded="false">
+            <span data-i18n="registry_bank_title">Transferencia internacional</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-panel">
             <ul class="list">
               <li>Beneficiary: Camilo Caceres</li>
               <li>IBAN: NL38 REVO 8521 9599 31</li>
@@ -206,7 +224,7 @@
 
     <footer class="site-footer">
       <p data-i18n="footer_contact">¿Preguntas? Escríbenos a alecamimatri@gmail.com tel: por definir</p>
-      <p data-i18n="footer_credit">Hecho por Cami con vibecoding y una carita feliz.</p>
+      <p data-i18n="footer_credit">Hecho por Cami con vibecoding 😁</p>
       <a href="#top" class="text-link" data-i18n="footer_back">Back to top</a>
     </footer>
 
