@@ -207,6 +207,12 @@ applyTranslations(currentLanguage);
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+const hasCountdown = Object.values(countdownValues).some(Boolean);
+if (hasCountdown) {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
 languageToggle.addEventListener("click", () => {
   currentLanguage = currentLanguage === "en" ? "es" : "en";
   applyTranslations(currentLanguage);
