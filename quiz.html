@@ -9,112 +9,216 @@
   <body class="quiz-page">
     <main class="quiz-wrapper">
       <section class="quiz-card">
+        <div class="quiz-language">
+          <button class="language-toggle" id="languageToggle" aria-label="Toggle language">
+            <span class="lang-option" data-lang="en">EN</span>
+            <span class="lang-divider">/</span>
+            <span class="lang-option" data-lang="es">ES</span>
+          </button>
+        </div>
         <div class="section-heading">
-          <p class="eyebrow">Quiz de los novios</p>
-          <h1>¿Cuánto nos conoces?</h1>
-          <p>Responde las 10 preguntas. Si aciertas al menos 5, ¡te felicitaremos!</p>
-          <a class="text-link" href="index.html">Volver a la invitación</a>
+          <p class="eyebrow" data-i18n="quiz_eyebrow">Quiz de los novios</p>
+          <h1 data-i18n="quiz_page_title">¿Cuánto nos conoces?</h1>
+          <p data-i18n="quiz_subtitle">Responde las 10 preguntas. Si aciertas al menos 5, ¡te felicitaremos!</p>
+          <a class="text-link" href="index.html#hero" data-i18n="quiz_back">Volver a la invitación</a>
         </div>
 
         <form class="quiz-form">
           <div class="quiz-question">
-            <label>1. ¿En qué ciudad nos comprometimos?</label>
+            <label data-i18n="quiz_q1">1. ¿En qué ciudad nos comprometimos?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q1" value="cartagena" data-correct="true" /> Cartagena</label>
-              <label><input type="radio" name="q1" value="bogota" /> Bogotá</label>
-              <label><input type="radio" name="q1" value="medellin" /> Medellín</label>
+              <label>
+                <input type="radio" name="q1" value="cartagena" />
+                <span data-i18n="quiz_q1_a1">Viena</span>
+              </label>
+              <label>
+                <input type="radio" name="q1" value="bogota" />
+                <span data-i18n="quiz_q1_a2">Praga</span>
+              </label>
+              <label>
+                <input type="radio" name="q1" value="medellin" data-correct="true" />
+                <span data-i18n="quiz_q1_a3">Budapest</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>2. ¿Cuál es nuestro plan favorito de domingo?</label>
+            <label data-i18n="quiz_q2">2. ¿Cuál es nuestro plan favorito de domingo?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q2" value="paseo" /> Ir de compras</label>
-              <label><input type="radio" name="q2" value="cafe" data-correct="true" /> Café y caminata</label>
-              <label><input type="radio" name="q2" value="cine" /> Cine y palomitas</label>
+              <label>
+                <input type="radio" name="q2" value="paseo" />
+                <span data-i18n="quiz_q2_a1">Ir de compras</span>
+              </label>
+              <label>
+                <input type="radio" name="q2" value="cafe" data-correct="true" />
+                <span data-i18n="quiz_q2_a2">Café y caminata</span>
+              </label>
+              <label>
+                <input type="radio" name="q2" value="cine" />
+                <span data-i18n="quiz_q2_a3">Cine y palomitas</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>3. ¿Cuál es el postre que más compartimos?</label>
+            <label data-i18n="quiz_q3">3. ¿Cuál es el postre que más compartimos?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q3" value="tiramisu" data-correct="true" /> Tiramisú</label>
-              <label><input type="radio" name="q3" value="brownie" /> Brownie</label>
-              <label><input type="radio" name="q3" value="helado" /> Helado</label>
+              <label>
+                <input type="radio" name="q3" value="tiramisu" data-correct="true" />
+                <span data-i18n="quiz_q3_a1">Tiramisú</span>
+              </label>
+              <label>
+                <input type="radio" name="q3" value="brownie" />
+                <span data-i18n="quiz_q3_a2">Brownie</span>
+              </label>
+              <label>
+                <input type="radio" name="q3" value="helado" />
+                <span data-i18n="quiz_q3_a3">Helado</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>4. ¿Cuál es nuestro destino soñado?</label>
+            <label data-i18n="quiz_q4">4. ¿Cuál es nuestro destino soñado?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q4" value="italia" data-correct="true" /> Italia</label>
-              <label><input type="radio" name="q4" value="japon" /> Japón</label>
-              <label><input type="radio" name="q4" value="mexico" /> México</label>
+              <label>
+                <input type="radio" name="q4" value="italia" data-correct="true" />
+                <span data-i18n="quiz_q4_a1">Italia</span>
+              </label>
+              <label>
+                <input type="radio" name="q4" value="japon" />
+                <span data-i18n="quiz_q4_a2">Japón</span>
+              </label>
+              <label>
+                <input type="radio" name="q4" value="mexico" />
+                <span data-i18n="quiz_q4_a3">México</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>5. ¿Qué nos gusta hacer en viajes?</label>
+            <label data-i18n="quiz_q5">5. ¿Qué nos gusta hacer en viajes?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q5" value="playa" /> Solo playa</label>
-              <label><input type="radio" name="q5" value="aventura" data-correct="true" /> Mezclar aventura y comida local</label>
-              <label><input type="radio" name="q5" value="shopping" /> Ir de compras</label>
+              <label>
+                <input type="radio" name="q5" value="playa" />
+                <span data-i18n="quiz_q5_a1">Solo playa</span>
+              </label>
+              <label>
+                <input type="radio" name="q5" value="aventura" data-correct="true" />
+                <span data-i18n="quiz_q5_a2">Mezclar aventura y comida local</span>
+              </label>
+              <label>
+                <input type="radio" name="q5" value="shopping" />
+                <span data-i18n="quiz_q5_a3">Ir de compras</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>6. ¿Cuál es nuestra canción favorita?</label>
+            <label data-i18n="quiz_q6">6. ¿Cuál es nuestra canción favorita?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q6" value="cancion1" /> Canción A</label>
-              <label><input type="radio" name="q6" value="cancion2" data-correct="true" /> Canción B</label>
-              <label><input type="radio" name="q6" value="cancion3" /> Canción C</label>
+              <label>
+                <input type="radio" name="q6" value="cancion1" />
+                <span data-i18n="quiz_q6_a1">Canción A</span>
+              </label>
+              <label>
+                <input type="radio" name="q6" value="cancion2" data-correct="true" />
+                <span data-i18n="quiz_q6_a2">Canción B</span>
+              </label>
+              <label>
+                <input type="radio" name="q6" value="cancion3" />
+                <span data-i18n="quiz_q6_a3">Canción C</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>7. ¿Cómo nos gusta celebrar los aniversarios?</label>
+            <label data-i18n="quiz_q7">7. ¿Cómo nos gusta celebrar los aniversarios?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q7" value="cena" data-correct="true" /> Cena especial y brindis</label>
-              <label><input type="radio" name="q7" value="fiesta" /> Gran fiesta</label>
-              <label><input type="radio" name="q7" value="viaje" /> Escapada sorpresa</label>
+              <label>
+                <input type="radio" name="q7" value="cena" data-correct="true" />
+                <span data-i18n="quiz_q7_a1">Cena especial y brindis</span>
+              </label>
+              <label>
+                <input type="radio" name="q7" value="fiesta" />
+                <span data-i18n="quiz_q7_a2">Gran fiesta</span>
+              </label>
+              <label>
+                <input type="radio" name="q7" value="viaje" />
+                <span data-i18n="quiz_q7_a3">Escapada sorpresa</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>8. ¿Cuál es nuestro snack infaltable?</label>
+            <label data-i18n="quiz_q8">8. ¿Cuál es nuestro snack infaltable?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q8" value="chocolate" data-correct="true" /> Chocolate</label>
-              <label><input type="radio" name="q8" value="papas" /> Papas fritas</label>
-              <label><input type="radio" name="q8" value="galletas" /> Galletas</label>
+              <label>
+                <input type="radio" name="q8" value="chocolate" data-correct="true" />
+                <span data-i18n="quiz_q8_a1">Chocolate</span>
+              </label>
+              <label>
+                <input type="radio" name="q8" value="papas" />
+                <span data-i18n="quiz_q8_a2">Papas fritas</span>
+              </label>
+              <label>
+                <input type="radio" name="q8" value="galletas" />
+                <span data-i18n="quiz_q8_a3">Galletas</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>9. ¿Cuál es nuestra bebida favorita para brindar?</label>
+            <label data-i18n="quiz_q9">9. ¿Cuál es nuestra bebida favorita para brindar?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q9" value="vino" data-correct="true" /> Vino espumoso</label>
-              <label><input type="radio" name="q9" value="cerveza" /> Cerveza</label>
-              <label><input type="radio" name="q9" value="coctel" /> Cóctel tropical</label>
+              <label>
+                <input type="radio" name="q9" value="vino" data-correct="true" />
+                <span data-i18n="quiz_q9_a1">Vino espumoso</span>
+              </label>
+              <label>
+                <input type="radio" name="q9" value="cerveza" />
+                <span data-i18n="quiz_q9_a2">Cerveza</span>
+              </label>
+              <label>
+                <input type="radio" name="q9" value="coctel" />
+                <span data-i18n="quiz_q9_a3">Cóctel tropical</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-question">
-            <label>10. ¿Qué no puede faltar en nuestra boda?</label>
+            <label data-i18n="quiz_q10">10. ¿Qué no puede faltar en nuestra boda?</label>
             <div class="quiz-options">
-              <label><input type="radio" name="q10" value="flores" /> Muchísimas flores</label>
-              <label><input type="radio" name="q10" value="baile" data-correct="true" /> Música para bailar toda la noche</label>
-              <label><input type="radio" name="q10" value="fuegos" /> Fuegos artificiales</label>
+              <label>
+                <input type="radio" name="q10" value="flores" />
+                <span data-i18n="quiz_q10_a1">Muchísimas flores</span>
+              </label>
+              <label>
+                <input type="radio" name="q10" value="baile" data-correct="true" />
+                <span data-i18n="quiz_q10_a2">Música para bailar toda la noche</span>
+              </label>
+              <label>
+                <input type="radio" name="q10" value="fuegos" />
+                <span data-i18n="quiz_q10_a3">Fuegos artificiales</span>
+              </label>
             </div>
           </div>
 
           <div class="quiz-actions">
-            <button class="primary-button" type="submit">Enviar respuestas</button>
+            <button class="primary-button" type="submit" data-i18n="quiz_submit">Enviar respuestas</button>
             <p class="quiz-result" aria-live="polite"></p>
           </div>
         </form>
       </section>
     </main>
 
+    <script src="script.js"></script>
     <script src="quiz.js"></script>
   </body>
 </html>
+
+
+
+
+
+
