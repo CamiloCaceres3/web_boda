@@ -176,7 +176,7 @@ const countdownValues = {
   seconds: document.querySelector('[data-countdown-value="seconds"]'),
 };
 
-const weddingDate = new Date(Date.UTC(2026, 6, 25, 20, 0, 0));
+const weddingDate = new Date("2026-07-25T15:00:00-05:00");
 
 const updateCountdown = () => {
   const now = new Date();
@@ -204,6 +204,8 @@ const updateCountdown = () => {
 
 let currentLanguage = "en";
 applyTranslations(currentLanguage);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 const hasCountdown = Object.values(countdownValues).some(Boolean);
 if (hasCountdown) {
