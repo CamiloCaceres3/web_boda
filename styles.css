@@ -177,6 +177,12 @@ html[lang="es"] .hero h1 {
   color: var(--muted);
   margin-bottom: 1rem;
   line-height: 1.25;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.hero-location {
+  font-size: 0.95rem;
 }
 
 .primary-button {
