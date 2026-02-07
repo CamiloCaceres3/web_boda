@@ -24,6 +24,7 @@
           <a href="#faq" data-i18n="nav_faq">FAQ</a>
           <a href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
           <a href="#registry" data-i18n="nav_registry">Registry</a>
+          <a href="#quiz" data-i18n="nav_quiz">Quiz</a>
         </div>
         <button class="language-toggle" id="languageToggle" aria-label="Toggle language">
           <span class="lang-option" data-lang="en">EN</span>
@@ -131,11 +132,15 @@
           <div class="card">
             <h3 data-i18n="travel_hotels">Hotels</h3>
             <ul class="list">
-              <li>Hotel Estelar</li>
-              <li>Sochagota</li>
-              <li>Colsubsidio Colonial</li>
-              <li>Lanceros</li>
-              <li>Hacienda El Salitre</li>
+              <li><a class="text-link" href="https://www.estelarpaipa.com/" target="_blank" rel="noreferrer">Hotel Estelar</a></li>
+              <li><a class="text-link" href="https://www.sochagota.com/" target="_blank" rel="noreferrer">Sochagota</a></li>
+              <li>
+                <a class="text-link" href="https://www.colsubsidio.com/planes/hoteles/paipa" target="_blank" rel="noreferrer">
+                  Colsubsidio Colonial
+                </a>
+              </li>
+              <li><a class="text-link" href="https://www.hotellanceros.com/" target="_blank" rel="noreferrer">Lanceros</a></li>
+              <li><a class="text-link" href="https://haciendaelsalitre.com/" target="_blank" rel="noreferrer">Hacienda El Salitre</a></li>
             </ul>
           </div>
           <div class="card">
@@ -181,6 +186,15 @@
           <a class="primary-button" href="https://forms.gle/your-placeholder-form" target="_blank" rel="noreferrer" data-i18n="rsvp_button">
             RSVP on Google Form
           </a>
+          <a
+            class="text-link"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alejandra%20%26%20Camilo%20Wedding&dates=20260725T200000Z/20260726T030000Z&location=Hotel%20Estelar%20Centro%20de%20Convenciones%20Paipa,%20Boyac%C3%A1%20-%20Colombia&details=Celebraci%C3%B3n%20de%20la%20boda%20de%20Alejandra%20y%20Camilo"
+            target="_blank"
+            rel="noreferrer"
+            data-i18n="rsvp_calendar"
+          >
+            Add to calendar
+          </a>
         </div>
       </section>
 
@@ -198,7 +212,14 @@
           </button>
           <div class="accordion-panel">
             <p data-i18n="registry_list_text">Lista de regalos (por confirmar)</p>
-            <p class="registry-handle" data-i18n="registry_handle">Llave Bre-B: @camicace</p>
+          </div>
+
+          <button class="accordion-item" aria-expanded="false">
+            <span data-i18n="registry_colombia_title">Transferencia en Colombia</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p data-i18n="registry_colombia_text">Llave Bre-B: @camicace</p>
           </div>
 
           <button class="accordion-item" aria-expanded="false">
@@ -218,6 +239,14 @@
               https://revolut.me/camiloflij
             </a>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="quiz">
+        <div class="section-heading">
+          <h2 data-i18n="quiz_title">Quiz</h2>
+          <p data-i18n="quiz_text">Answer 10 questions about us and see how well you know the couple.</p>
+          <a class="primary-button" href="quiz.html" data-i18n="quiz_button">Start the quiz</a>
         </div>
       </section>
     </main>

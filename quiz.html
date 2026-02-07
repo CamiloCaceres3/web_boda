@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz | Alejandra & Camilo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="quiz-page">
+    <main class="quiz-wrapper">
+      <section class="quiz-card">
+        <div class="section-heading">
+          <p class="eyebrow">Quiz de los novios</p>
+          <h1>¿Cuánto nos conoces?</h1>
+          <p>Responde las 10 preguntas. Si aciertas al menos 5, ¡te felicitaremos!</p>
+          <a class="text-link" href="index.html">Volver a la invitación</a>
+        </div>
+
+        <form class="quiz-form">
+          <div class="quiz-question">
+            <label>1. ¿En qué ciudad nos comprometimos?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="cartagena" data-correct="true" /> Cartagena</label>
+              <label><input type="radio" name="q1" value="bogota" /> Bogotá</label>
+              <label><input type="radio" name="q1" value="medellin" /> Medellín</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>2. ¿Cuál es nuestro plan favorito de domingo?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="paseo" /> Ir de compras</label>
+              <label><input type="radio" name="q2" value="cafe" data-correct="true" /> Café y caminata</label>
+              <label><input type="radio" name="q2" value="cine" /> Cine y palomitas</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>3. ¿Cuál es el postre que más compartimos?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="tiramisu" data-correct="true" /> Tiramisú</label>
+              <label><input type="radio" name="q3" value="brownie" /> Brownie</label>
+              <label><input type="radio" name="q3" value="helado" /> Helado</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>4. ¿Cuál es nuestro destino soñado?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="italia" data-correct="true" /> Italia</label>
+              <label><input type="radio" name="q4" value="japon" /> Japón</label>
+              <label><input type="radio" name="q4" value="mexico" /> México</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>5. ¿Qué nos gusta hacer en viajes?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="playa" /> Solo playa</label>
+              <label><input type="radio" name="q5" value="aventura" data-correct="true" /> Mezclar aventura y comida local</label>
+              <label><input type="radio" name="q5" value="shopping" /> Ir de compras</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>6. ¿Cuál es nuestra canción favorita?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q6" value="cancion1" /> Canción A</label>
+              <label><input type="radio" name="q6" value="cancion2" data-correct="true" /> Canción B</label>
+              <label><input type="radio" name="q6" value="cancion3" /> Canción C</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>7. ¿Cómo nos gusta celebrar los aniversarios?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q7" value="cena" data-correct="true" /> Cena especial y brindis</label>
+              <label><input type="radio" name="q7" value="fiesta" /> Gran fiesta</label>
+              <label><input type="radio" name="q7" value="viaje" /> Escapada sorpresa</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>8. ¿Cuál es nuestro snack infaltable?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q8" value="chocolate" data-correct="true" /> Chocolate</label>
+              <label><input type="radio" name="q8" value="papas" /> Papas fritas</label>
+              <label><input type="radio" name="q8" value="galletas" /> Galletas</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>9. ¿Cuál es nuestra bebida favorita para brindar?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q9" value="vino" data-correct="true" /> Vino espumoso</label>
+              <label><input type="radio" name="q9" value="cerveza" /> Cerveza</label>
+              <label><input type="radio" name="q9" value="coctel" /> Cóctel tropical</label>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <label>10. ¿Qué no puede faltar en nuestra boda?</label>
+            <div class="quiz-options">
+              <label><input type="radio" name="q10" value="flores" /> Muchísimas flores</label>
+              <label><input type="radio" name="q10" value="baile" data-correct="true" /> Música para bailar toda la noche</label>
+              <label><input type="radio" name="q10" value="fuegos" /> Fuegos artificiales</label>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="primary-button" type="submit">Enviar respuestas</button>
+            <p class="quiz-result" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="quiz.js"></script>
+  </body>
+</html>
