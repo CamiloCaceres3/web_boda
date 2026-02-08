@@ -677,7 +677,7 @@ a {
 
 .full-width-photo--page {
   background: linear-gradient(180deg, rgba(15, 18, 16, 0.55), rgba(255, 255, 255, 0.08)),
-    url("../fotos/fotosilla.jpeg") center / cover no-repeat;
+    url("fotos/fotosilla.jpeg") center / cover no-repeat;
   background-size: cover;
   background-position: center;
   height: min(65vh, 720px);
@@ -705,7 +705,7 @@ a {
     width: 100%;
     aspect-ratio: 4 / 5;
     border-radius: 18px;
-    background: url("../fotos/fotosilla.jpeg") center / contain no-repeat;
+    background: url("fotos/fotosilla.jpeg") center / contain no-repeat;
     box-shadow: var(--shadow);
   }
 }
