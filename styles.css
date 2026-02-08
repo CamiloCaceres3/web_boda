@@ -124,7 +124,7 @@ a {
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, rgba(255,255,255, 0.9), rgba(255,255,255, 0.3)),
-    url("../fotos/foto_inicio.jpeg") center / cover no-repeat;
+    url("fotos/foto_inicio.jpeg") center / cover no-repeat;
   padding: 6rem 1.5rem 4rem;
 }
 
