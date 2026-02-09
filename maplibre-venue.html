@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venue Map | Hotel Estelar Paipa</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css"
+    />
+    <style>
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
+    <script>
+      const venue = [-73.12496, 5.758808];
+      const locations = [
+        { label: "Ceremonia", coords: [-73.12302593426624,5.756697943280986] },
+        { label: "Cóctel", coords: [-73.12395860551777, 5.758726381209675] },
+        { label: "Recepción", coords: [-73.12517890443824, 5.7590008914667905] }
+      ];
+      const map = new maplibregl.Map({
+        container: "map",
+        style: "https://api.maptiler.com/maps/hybrid-v4/style.json?key=V8uVn3piF7fWIvMxuDpc",
+        center: venue,
+        zoom: 13,
+        pitch: 45,
+        bearing: -15
+      });
+
+      map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+      map.on("load", () => {
+        locations.forEach((location) => {
+          const popup = new maplibregl.Popup({ offset: 18 }).setText(
+            location.label
+          );
+          new maplibregl.Marker({ color: "#2a5a4a" })
+            .setLngLat(location.coords)
+            .setPopup(popup)
+            .addTo(map);
+        });
+      });
+    </script>
+  </body>
+</html>
