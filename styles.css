@@ -698,6 +698,17 @@ a {
   text-align: center;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  transition: padding 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.rsvp-block.is-compact {
+  padding-top: 1.8rem;
+  padding-bottom: 1.6rem;
+}
+
+.rsvp-block.is-expanded {
+  border-color: rgba(75, 92, 9, 0.2);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.08);
 }
 
 .rsvp-block p {
@@ -711,6 +722,187 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.35s ease, margin-top 0.35s ease;
+}
+
+.rsvp-actions.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  margin-top: 0;
+  pointer-events: none;
+}
+
+.rsvp-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.9rem;
+  text-align: left;
+}
+
+.rsvp-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.rsvp-row label {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+}
+
+.rsvp-inline {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  width: 100%;
+  border: 1px solid rgba(75, 92, 9, 0.24);
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  background: rgba(255, 255, 255, 0.86);
+  font: inherit;
+  color: var(--text);
+}
+
+.rsvp-form textarea {
+  resize: vertical;
+}
+
+.rsvp-status {
+  min-height: 1.2rem;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.rsvp-status[data-state="success"] {
+  color: #2e7d32;
+}
+
+.rsvp-status[data-state="error"] {
+  color: #a13131;
+}
+
+.rsvp-status[data-state="loading"] {
+  color: var(--muted);
+}
+
+.rsvp-details {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(75, 92, 9, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  max-height: 560px;
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.35s ease, padding 0.3s ease, margin 0.3s ease;
+}
+
+.rsvp-details.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.rsvp-found-name {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.rsvp-attendees-title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.rsvp-attendees-hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.rsvp-attendees-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.rsvp-attendee-option {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(75, 92, 9, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rsvp-attendee-option:hover {
+  border-color: rgba(75, 92, 9, 0.36);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 18px rgba(31, 38, 35, 0.08);
+}
+
+.rsvp-attendee-option input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  border: 1.5px solid rgba(75, 92, 9, 0.45);
+  border-radius: 6px;
+  background: #fff;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.rsvp-attendee-option input::after {
+  content: "";
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 3px;
+  transform: scale(0);
+  transition: transform 0.15s ease;
+  background: rgba(75, 92, 9, 1);
+}
+
+.rsvp-attendee-option input:checked {
+  border-color: rgba(75, 92, 9, 1);
+  background: rgba(240, 246, 238, 1);
+}
+
+.rsvp-attendee-option input:checked::after {
+  transform: scale(1);
+}
+
+.rsvp-attendee-option:has(input:checked) {
+  border-color: rgba(75, 92, 9, 0.45);
+  background: rgba(242, 248, 239, 1);
+}
+
+.rsvp-attendee-option input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(75, 92, 9, 0.2);
 }
 
 .rsvp-button {
@@ -734,6 +926,11 @@ a {
   .rsvp-actions {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .rsvp-inline {
+    grid-template-columns: 1fr auto;
+    align-items: end;
   }
 }
 

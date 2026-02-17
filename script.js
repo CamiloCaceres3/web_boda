@@ -176,17 +176,39 @@ const dictionary = {
       "During the couple's entrance at the ceremony, at their request, it won't be possible to take photos or use cell phones.",
     rsvp_title: "RSVP",
     rsvp_text: "Please respond by the date indicated on your invitation.",
-    rsvp_button: "RSVP on Google Form",
+    rsvp_name_label: "Full name",
+    rsvp_name_placeholder: "Type your first and last name",
+    rsvp_lookup_button: "Find invitation",
+    rsvp_found_guest: "Guest:",
+    rsvp_group_title: "Guests in this reservation",
+    rsvp_attendees_label: "Who is attending",
+    rsvp_attendees_hint: "Select the people in your group who will attend.",
+    rsvp_attendance_label: "Will you attend?",
+    rsvp_attendance_placeholder: "Select one option",
+    rsvp_attendance_yes: "Yes, I will attend",
+    rsvp_attendance_no: "No, I cannot attend",
+    rsvp_guests_label: "Number of attendees",
+    rsvp_message_label: "Message (optional)",
+    rsvp_message_placeholder: "Write a message for the couple",
+    rsvp_submit_button: "Send RSVP",
+    rsvp_lookup_searching: "Searching invitation...",
+    rsvp_lookup_not_found: "We could not find your name. Please contact the couple.",
+    rsvp_lookup_error: "Could not validate your invitation right now. Please try again.",
+    rsvp_lookup_success: "Invitation found.",
+    rsvp_submit_sending: "Sending your RSVP...",
+    rsvp_submit_success: "Thanks! Your RSVP was saved.",
+    rsvp_submit_error: "Your RSVP could not be saved. Please try again.",
+    rsvp_submit_validation_error: "Review your data before sending.",
     rsvp_calendar: "Add to calendar",
     registry_title: "Gifts",
     registry_text: "We appreciate your presence, but if you'd like to contribute, here are the details:",
     registry_list_title: "Gift list",
     registry_list_text: "Gift list (to be defined)",
     registry_honeymoon_title: "Honeymoon",
-    registry_honeymoon_text: "Honeymoon fund (to be defined)",
-    registry_colombia_title: "Transfer in Colombia",
+    registry_honeymoon_text: "Honeymoon contribution options:",
+    registry_colombia_title: "Colombia",
     registry_colombia_text: "Bre-B key: @camicace",
-    registry_bank_title: "Transfer in the Netherlands",
+    registry_bank_title: "Netherlands / Europe",
     registry_link: "https://revolut.me/camiloflij",
     quiz_title: "Quiz",
     quiz_text: "Answer 10 questions about us and see how well you know the couple.",
@@ -196,45 +218,45 @@ const dictionary = {
     quiz_subtitle: "Answer the 10 questions. If you get at least 5 right, we will cheer for you!",
     quiz_back: "Back to the invitation",
     quiz_q1: "1. In which city did we get engaged?",
-    quiz_q1_a1: "Vienna",
-    quiz_q1_a2: "Prague",
+    quiz_q1_a1: "Utrecht",
+    quiz_q1_a2: "Cerinza",
     quiz_q1_a3: "Budapest",
-    quiz_q2: "2. What is our favorite Sunday plan?",
-    quiz_q2_a1: "Shopping",
-    quiz_q2_a2: "Coffee and a walk",
-    quiz_q2_a3: "Movies and popcorn",
-    quiz_q3: "3. Which dessert do we share the most?",
-    quiz_q3_a1: "Tiramisu",
-    quiz_q3_a2: "Brownie",
-    quiz_q3_a3: "Ice cream",
-    quiz_q4: "4. What is our dream destination?",
-    quiz_q4_a1: "Italy",
-    quiz_q4_a2: "Japan",
-    quiz_q4_a3: "Mexico",
-    quiz_q5: "5. What do we like to do when we travel?",
-    quiz_q5_a1: "Only the beach",
-    quiz_q5_a2: "Mix adventure and local food",
-    quiz_q5_a3: "Go shopping",
-    quiz_q6: "6. What is our favorite song?",
-    quiz_q6_a1: "Song A",
-    quiz_q6_a2: "Song B",
-    quiz_q6_a3: "Song C",
-    quiz_q7: "7. How do we like to celebrate anniversaries?",
-    quiz_q7_a1: "Special dinner and a toast",
-    quiz_q7_a2: "Big party",
-    quiz_q7_a3: "Surprise getaway",
-    quiz_q8: "8. What snack can we never be without?",
-    quiz_q8_a1: "Chocolate",
-    quiz_q8_a2: "French fries",
-    quiz_q8_a3: "Cookies",
-    quiz_q9: "9. What is our favorite drink to toast with?",
-    quiz_q9_a1: "Sparkling wine",
-    quiz_q9_a2: "Beer",
-    quiz_q9_a3: "Tropical cocktail",
-    quiz_q10: "10. What cannot be missing at our wedding?",
-    quiz_q10_a1: "Lots of flowers",
-    quiz_q10_a2: "Music to dance all night",
-    quiz_q10_a3: "Fireworks",
+    quiz_q2: "2. What is our favorite cocktail?",
+    quiz_q2_a1: "Martini",
+    quiz_q2_a2: "Aperol Spritz",
+    quiz_q2_a3: "Margarita",
+    quiz_q3: "3. What can never be missing at dinner at home?",
+    quiz_q3_a1: "Sparkling water (because we’re basically old now)",
+    quiz_q3_a2: "Coca-Cola… because what even is that",
+    quiz_q3_a3: "Lulo juice — Colombia is amazing",
+    quiz_q4: "4. When we visit a new city, what places do we *actually* hunt down first?",
+    quiz_q4_a1: "Architecture & football stadiums",
+    quiz_q4_a2: "Museums & bars (culture… and more culture)",
+    quiz_q4_a3: "Shops & parks",
+    quiz_q5: "5. If this song plays… the dance floor is no longer family-friendly. Which one is it?",
+    quiz_q5_a1: "We lose all elegance",
+    quiz_q5_a2: "The circle forms",
+    quiz_q5_a3: "Pa' Que Se Lo Gozen — Tego Calderón",
+    quiz_q6: "6. Statistically speaking, Camilo receives Pao-Pao:",
+    quiz_q6_a1: "Basic level",
+    quiz_q6_a2: "Premium level",
+    quiz_q6_a3: "Unlimited corporate plan",
+    quiz_q7: "7. BBQs at our place are:",
+    quiz_q7_a1: "The main event on Camilo’s calendar" ,
+    quiz_q7_a2: "An unnecessarily large food production",
+    quiz_q7_a3: "A chill Sunday plan… according to us",
+    quiz_q8: "8. We decided to get married in Boyacá because:",
+    quiz_q8_a1: "Tradition matters",
+    quiz_q8_a2: "Family rules",
+    quiz_q8_a3: "That’s where our story began",
+    quiz_q9: "9. When Ale says 'just one more shot of aguardiente and that’s it', it means:",
+    quiz_q9_a1: "Alright, that’s enough",
+    quiz_q9_a2: "Last one and we leave",
+    quiz_q9_a3: "Guaro and water",
+    quiz_q10: "10. After 5 years long-distance, we learned that:",
+    quiz_q10_a1: "WiFi can connect hearts too",
+    quiz_q10_a2: "Miles do count… just not on Ryanair",
+    quiz_q10_a3: "Love isn’t selfish, it’s patient… and together anything is possible",
     quiz_submit: "Submit answers",
     quiz_result_score: "You answered {correct} out of {total} correctly.",
     quiz_result_completion_hint: " You can complete the remaining questions for a full result.",
@@ -418,17 +440,39 @@ const dictionary = {
       "En el momento de entrada de los novios en la ceremonia, por petición de los novios no es posible tomar fotos y/o sacar el celular.",
     rsvp_title: "RSVP",
     rsvp_text: "Por favor responde en la fecha indicada en tu invitación.",
-    rsvp_button: "Confirmar en Google Form",
+    rsvp_name_label: "Nombre completo",
+    rsvp_name_placeholder: "Escribe tu nombre y apellido",
+    rsvp_lookup_button: "Buscar invitacion",
+    rsvp_found_guest: "Invitado:",
+    rsvp_group_title: "Invitados en esta reserva",
+    rsvp_attendees_label: "Quienes asistiran",
+    rsvp_attendees_hint: "Selecciona las personas de tu grupo que asistiran.",
+    rsvp_attendance_label: "Asistiras?",
+    rsvp_attendance_placeholder: "Selecciona una opcion",
+    rsvp_attendance_yes: "Si, asistire",
+    rsvp_attendance_no: "No podre asistir",
+    rsvp_guests_label: "Numero de asistentes",
+    rsvp_message_label: "Mensaje (opcional)",
+    rsvp_message_placeholder: "Escribe un mensaje para los novios",
+    rsvp_submit_button: "Enviar RSVP",
+    rsvp_lookup_searching: "Buscando invitacion...",
+    rsvp_lookup_not_found: "No encontramos tu nombre. Por favor contacta a los novios.",
+    rsvp_lookup_error: "No pudimos validar tu invitacion en este momento. Intenta de nuevo.",
+    rsvp_lookup_success: "Invitacion encontrada.",
+    rsvp_submit_sending: "Enviando tu RSVP...",
+    rsvp_submit_success: "Gracias. Tu respuesta quedo guardada.",
+    rsvp_submit_error: "No pudimos guardar tu RSVP. Intenta de nuevo.",
+    rsvp_submit_validation_error: "Revisa tus datos antes de enviar.",
     rsvp_calendar: "Agendar en mi calendario",
     registry_title: "Regalos",
     registry_text: "Agradecemos su presencia, pero si desean contribuir estos son los datos:",
     registry_list_title: "Lista de regalos",
     registry_list_text: "Lista de regalos (por confirmar)",
     registry_honeymoon_title: "Luna de miel",
-    registry_honeymoon_text: "Aporte para la luna de miel (por confirmar)",
-    registry_colombia_title: "Transferencia en Colombia",
+    registry_honeymoon_text: "Opciones para aporte de luna de miel:",
+    registry_colombia_title: "Colombia",
     registry_colombia_text: "Llave Bre-B: @camicace",
-    registry_bank_title: "Transferencia en Países Bajos",
+    registry_bank_title: "Paises Bajos / Europa",
     registry_link: "https://revolut.me/camiloflij",
     quiz_title: "Quiz",
     quiz_text: "Responde 10 preguntas sobre nosotros y descubre cuánto conoces a los novios.",
@@ -438,45 +482,45 @@ const dictionary = {
     quiz_subtitle: "Responde las 10 preguntas. Si aciertas al menos 5, ¡te felicitaremos!",
     quiz_back: "Volver a la invitación",
     quiz_q1: "1. ¿En qué ciudad nos comprometimos?",
-    quiz_q1_a1: "Viena",
-    quiz_q1_a2: "Praga",
+    quiz_q1_a1: "Utrecht",
+    quiz_q1_a2: "Cerinza",
     quiz_q1_a3: "Budapest",
-    quiz_q2: "2. ¿Cuál es nuestro plan favorito de domingo?",
-    quiz_q2_a1: "Ir de compras",
-    quiz_q2_a2: "Café y caminata",
-    quiz_q2_a3: "Cine y palomitas",
-    quiz_q3: "3. ¿Cuál es el postre que más compartimos?",
-    quiz_q3_a1: "Tiramisú",
-    quiz_q3_a2: "Brownie",
-    quiz_q3_a3: "Helado",
-    quiz_q4: "4. ¿Cuál es nuestro destino soñado?",
-    quiz_q4_a1: "Italia",
-    quiz_q4_a2: "Japón",
-    quiz_q4_a3: "México",
-    quiz_q5: "5. ¿Qué nos gusta hacer en viajes?",
-    quiz_q5_a1: "Solo playa",
-    quiz_q5_a2: "Mezclar aventura y comida local",
-    quiz_q5_a3: "Ir de compras",
-    quiz_q6: "6. ¿Cuál es nuestra canción favorita?",
-    quiz_q6_a1: "Canción A",
-    quiz_q6_a2: "Canción B",
-    quiz_q6_a3: "Canción C",
-    quiz_q7: "7. ¿Cómo nos gusta celebrar los aniversarios?",
-    quiz_q7_a1: "Cena especial y brindis",
-    quiz_q7_a2: "Gran fiesta",
-    quiz_q7_a3: "Escapada sorpresa",
-    quiz_q8: "8. ¿Cuál es nuestro snack infaltable?",
-    quiz_q8_a1: "Chocolate",
-    quiz_q8_a2: "Papas fritas",
-    quiz_q8_a3: "Galletas",
-    quiz_q9: "9. ¿Cuál es nuestra bebida favorita para brindar?",
-    quiz_q9_a1: "Vino espumoso",
-    quiz_q9_a2: "Cerveza",
-    quiz_q9_a3: "Cóctel tropical",
-    quiz_q10: "10. ¿Qué no puede faltar en nuestra boda?",
-    quiz_q10_a1: "Muchísimas flores",
-    quiz_q10_a2: "Música para bailar toda la noche",
-    quiz_q10_a3: "Fuegos artificiales",
+    quiz_q2: "2. ¿Cuál es nuestro coctail favorito?",
+    quiz_q2_a1: "Martini",
+    quiz_q2_a2: "Aperol Spritz",
+    quiz_q2_a3: "Margarita",
+    quiz_q3: "3. ¿Qué no puede faltar nunca en una cena en la casa?",
+    quiz_q3_a1: "Agua con gas (porque ya somos viejitos)",
+    quiz_q3_a2: "Coca-Cola… porque eso qué es",
+    quiz_q3_a3: "Jugo de lulo — qué rico Colombia",
+    quiz_q4: "4. Cuando conocemos una ciudad nueva… ¿qué buscamos primero sí o sí?",
+    quiz_q4_a1: "Arquitectura y estadios",
+    quiz_q4_a2: "Museos y bares (equilibrio cultural)",
+    quiz_q4_a3: "Tiendas y parques",
+    quiz_q5: "5. Si suena esta canción… la pista deja de ser familiar. ¿Cuál es?", 
+    quiz_q5_a1: "Perdemos la elegancia", 
+    quiz_q5_a2: "Se forma el círculo", 
+    quiz_q5_a3: "Pa' Que Se Lo Gozen — Tego Calderón",
+    quiz_q6: "6. Estadísticamente hablando, Camilo recibe Pao-Pao:",
+    quiz_q6_a1: "Nivel básico",
+    quiz_q6_a2: "Nivel premium",
+    quiz_q6_a3: "Plan corporativo ilimitado",
+    quiz_q7: "7. Los asados en nuestra casa son:",
+    quiz_q7_a1: "El evento principal del calendario de Camilo",
+    quiz_q7_a2: "Una producción gastronómica innecesaria",
+    quiz_q7_a3: "Un plan tranquilo… según nosotros",
+    quiz_q8: "8. Decidimos casarnos en Boyacá porque:",
+    quiz_q8_a1: "La tradición pesa",
+    quiz_q8_a2: "La familia manda",
+    quiz_q8_a3: "Ahí empezó esta historia",
+    quiz_q9: "9. Cuando Ale dice 'solo una copita más de guaro y ya', significa:",
+    quiz_q9_a1: "Ya estuvo bueno", 
+    quiz_q9_a2: "La última y nos vamos", 
+    quiz_q9_a3: "Guaro y water",
+    quiz_q10: "10. Después de 5 años a distancia, aprendimos que:",
+    quiz_q10_a1: "El WiFi también une corazones", 
+    quiz_q10_a2: "Las millas sí cuentan pero no en Ryanair",
+    quiz_q10_a3: "Que el amor no es egoista, que es paciente y que si suena en conjunto, todo se puede",
     quiz_submit: "Enviar respuestas",
     quiz_result_score: "Respondiste {correct} de {total} correctamente.",
     quiz_result_completion_hint: " Puedes completar las restantes para un resultado completo.",
@@ -491,10 +535,18 @@ const dictionary = {
 
 const applyTranslations = (lang) => {
   document.documentElement.lang = lang;
+
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
     if (dictionary[lang][key]) {
       element.textContent = dictionary[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    const key = element.getAttribute("data-i18n-placeholder");
+    if (dictionary[lang][key]) {
+      element.setAttribute("placeholder", dictionary[lang][key]);
     }
   });
 
@@ -503,46 +555,55 @@ const applyTranslations = (lang) => {
   });
 };
 
-const toggleMenu = () => {
-  if (!navLinks || !navToggle) {
-    return;
+const setupNavigation = () => {
+  const toggleMenu = () => {
+    if (!navLinks || !navToggle) {
+      return;
+    }
+    const isOpen = navLinks.classList.toggle("show");
+    navToggle.setAttribute("aria-expanded", isOpen);
+  };
+
+  if (navToggle) {
+    navToggle.addEventListener("click", toggleMenu);
   }
-  const isOpen = navLinks.classList.toggle("show");
-  navToggle.setAttribute("aria-expanded", isOpen);
+
+  if (navLinks) {
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        navToggle.setAttribute("aria-expanded", false);
+      });
+    });
+  }
 };
 
-if (navToggle) {
-  navToggle.addEventListener("click", toggleMenu);
-}
+const setupAccordion = () => {
+  const accordionButtons = document.querySelectorAll(".accordion-item");
 
-if (navLinks) {
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-      navToggle.setAttribute("aria-expanded", false);
-    });
-  });
-}
-
-document.querySelectorAll(".accordion-item").forEach((button) => {
-  button.addEventListener("click", () => {
-    const panel = button.nextElementSibling;
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-    document.querySelectorAll(".accordion-item").forEach((item) => {
+  const collapseAccordion = () => {
+    accordionButtons.forEach((item) => {
       item.setAttribute("aria-expanded", "false");
-      const siblingPanel = item.nextElementSibling;
-      if (siblingPanel) {
-        siblingPanel.classList.remove("open");
+      const panel = item.nextElementSibling;
+      if (panel) {
+        panel.classList.remove("open");
       }
     });
+  };
 
-    button.setAttribute("aria-expanded", String(!isExpanded));
-    if (panel) {
-      panel.classList.toggle("open", !isExpanded);
-    }
+  accordionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = button.nextElementSibling;
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+      collapseAccordion();
+      button.setAttribute("aria-expanded", String(!isExpanded));
+      if (panel) {
+        panel.classList.toggle("open", !isExpanded);
+      }
+    });
   });
-});
+};
 
 const countdownValues = {
   days: document.querySelector('[data-countdown-value="days"]'),
@@ -553,45 +614,49 @@ const countdownValues = {
 
 const weddingDate = new Date("2026-07-25T15:00:00-05:00");
 
+const formatCountdownValue = (value) => String(value).padStart(2, "0");
+
 const updateCountdown = () => {
   const now = new Date();
   const diff = weddingDate - now;
   const totalSeconds = Math.max(0, Math.floor(diff / 1000));
 
-  const days = Math.floor(totalSeconds / (60 * 60 * 24));
-  const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-  const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-  const seconds = totalSeconds % 60;
+  const countdownData = {
+    days: Math.floor(totalSeconds / (60 * 60 * 24)),
+    hours: Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60)),
+    minutes: Math.floor((totalSeconds % (60 * 60)) / 60),
+    seconds: totalSeconds % 60,
+  };
 
-  if (countdownValues.days) {
-    countdownValues.days.textContent = String(days).padStart(2, "0");
+  Object.entries(countdownData).forEach(([unit, value]) => {
+    if (countdownValues[unit]) {
+      countdownValues[unit].textContent = formatCountdownValue(value);
+    }
+  });
+};
+
+const setupCountdown = () => {
+  const hasCountdown = Object.values(countdownValues).some(Boolean);
+  if (!hasCountdown) {
+    return;
   }
-  if (countdownValues.hours) {
-    countdownValues.hours.textContent = String(hours).padStart(2, "0");
-  }
-  if (countdownValues.minutes) {
-    countdownValues.minutes.textContent = String(minutes).padStart(2, "0");
-  }
-  if (countdownValues.seconds) {
-    countdownValues.seconds.textContent = String(seconds).padStart(2, "0");
-  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 };
 
 let currentLanguage = "es";
-applyTranslations(currentLanguage);
 
-const hasCountdown = Object.values(countdownValues).some(Boolean);
-if (hasCountdown) {
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-}
+const toggleLanguage = () => {
+  currentLanguage = currentLanguage === "es" ? "en" : "es";
+  applyTranslations(currentLanguage);
+};
 
-if (languageToggle) {
-  languageToggle.addEventListener("click", () => {
-    currentLanguage = currentLanguage === "es" ? "en" : "es";
-    applyTranslations(currentLanguage);
-  });
-}
+const setupLanguageToggle = () => {
+  applyTranslations(currentLanguage);
+  if (languageToggle) {
+    languageToggle.addEventListener("click", toggleLanguage);
+  }
+};
 
 window.i18n = {
   dictionary,
@@ -599,40 +664,43 @@ window.i18n = {
   getCurrentLanguage: () => currentLanguage,
 };
 
-const countdownEl = document.querySelector(".countdown");
-if (countdownEl && "IntersectionObserver" in window) {
+const setupCountdownObserver = () => {
+  const countdownEl = document.querySelector(".countdown");
+  if (!countdownEl || !("IntersectionObserver" in window)) {
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            countdownEl.classList.add("is-aligned");
-            observer.disconnect();
-          }, 200);
+        if (!entry.isIntersecting) {
+          return;
         }
+        setTimeout(() => {
+          countdownEl.classList.add("is-aligned");
+          observer.disconnect();
+        }, 200);
       });
     },
     { threshold: 0.4 }
   );
+
   observer.observe(countdownEl);
-}
+};
 
-
-
-
-const heroContent = document.querySelector(".hero-content-inner");
-const heroSection = document.querySelector(".hero");
-
-const enableHeroParallax = () => {
+const setupHeroParallax = () => {
+  const heroContent = document.querySelector(".hero-content-inner");
   if (!heroContent) {
     return;
   }
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) {
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     return;
   }
 
+  const heroSection = document.querySelector(".hero");
   let ticking = false;
+
   const onScroll = () => {
     if (ticking) {
       return;
@@ -640,9 +708,8 @@ const enableHeroParallax = () => {
     ticking = true;
     window.requestAnimationFrame(() => {
       const rect = (heroSection || heroContent).getBoundingClientRect();
-      const maxShift = 120;
       const progress = Math.min(Math.max(-rect.top, 0), window.innerHeight);
-      const shift = Math.min(maxShift, progress * 0.25);
+      const shift = Math.min(120, progress * 0.25);
       heroContent.style.transform = `translateY(${shift}px)`;
       ticking = false;
     });
@@ -653,49 +720,293 @@ const enableHeroParallax = () => {
   window.addEventListener("resize", onScroll);
 };
 
-enableHeroParallax();
+const setupHeroIntroAnimation = () => {
+  const heroContentAnimation = document.querySelector(".hero-content");
+  if (!heroContentAnimation) {
+    return;
+  }
 
-
-const heroContentAnimation = document.querySelector('.hero-content');
-if (heroContentAnimation) {
-  window.addEventListener('load', () => {
-    heroContentAnimation.classList.add('is-animated');
+  window.addEventListener("load", () => {
+    heroContentAnimation.classList.add("is-animated");
   });
-}
+};
 
+const setupBackToTop = () => {
+  const backToTop = document.querySelector(".back-to-top");
+  if (!backToTop) {
+    return;
+  }
 
-
-
-const backToTop = document.querySelector('.back-to-top');
-if (backToTop) {
-  backToTop.addEventListener('click', (event) => {
+  backToTop.addEventListener("click", (event) => {
     event.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
+};
 
+const setupInteractiveRsvp = () => {
+  const form = document.getElementById("rsvpForm");
+  const rsvpBlockEl = document.querySelector("#rsvp .rsvp-block");
+  const rsvpActionsEl = document.getElementById("rsvpActions");
+  const nameInput = document.getElementById("rsvpName");
+  const lookupButton = document.getElementById("rsvpLookupButton");
+  const statusEl = document.getElementById("rsvpStatus");
+  const detailsEl = document.getElementById("rsvpDetails");
+  const foundGuestEl = document.getElementById("rsvpFoundGuest");
+  const attendeesListEl = document.getElementById("rsvpAttendeesList");
+  const messageEl = document.getElementById("rsvpMessage");
+  const submitButton = document.getElementById("rsvpSubmitButton");
 
+  if (
+    !form ||
+    !nameInput ||
+    !lookupButton ||
+    !statusEl ||
+    !rsvpBlockEl ||
+    !detailsEl ||
+    !foundGuestEl ||
+    !attendeesListEl ||
+    !messageEl ||
+    !submitButton
+  ) {
+    return;
+  }
 
-const entrySplash = document.getElementById('entrySplash');
-const entryButton = document.getElementById('entryButton');
-const siteMain = document.querySelector('.site-main');
-if (entrySplash && entryButton && siteMain) {
-  entryButton.addEventListener('click', () => {
-    const splashImg = entryButton.querySelector('img');
-    if (splashImg) {
-      splashImg.classList.add('is-rotating');
+  const apiUrl = window.RSVP_API_URL || "";
+  let guestRecord = null;
+
+  const translate = (key) => {
+    const langData = dictionary[currentLanguage] || dictionary.es;
+    return langData[key] || key;
+  };
+
+  const setStatus = (key, type) => {
+    statusEl.textContent = translate(key);
+    statusEl.dataset.state = type;
+    statusEl.hidden = false;
+  };
+
+  const setExpandedState = (isExpanded) => {
+    rsvpBlockEl.classList.toggle("is-compact", !isExpanded);
+    rsvpBlockEl.classList.toggle("is-expanded", isExpanded);
+    detailsEl.classList.toggle("is-collapsed", !isExpanded);
+    detailsEl.setAttribute("aria-hidden", String(!isExpanded));
+    if (rsvpActionsEl) {
+      rsvpActionsEl.classList.toggle("is-collapsed", !isExpanded);
+      rsvpActionsEl.setAttribute("aria-hidden", String(!isExpanded));
     }
-    const isMobile = window.matchMedia('(max-width: 600px)').matches;
+  };
+
+  const resetLookupState = () => {
+    guestRecord = null;
+    foundGuestEl.textContent = "";
+    attendeesListEl.innerHTML = "";
+    statusEl.hidden = true;
+    statusEl.textContent = "";
+    statusEl.dataset.state = "";
+    setExpandedState(false);
+  };
+
+  const setControlsDisabled = (isDisabled) => {
+    lookupButton.disabled = isDisabled;
+    submitButton.disabled = isDisabled;
+  };
+
+  const renderGuestGroup = (members) => {
+    attendeesListEl.innerHTML = "";
+    const list = Array.isArray(members) ? members : [];
+    if (!list.length) return;
+
+    list.forEach((member, index) => {
+      const option = document.createElement("label");
+      option.className = "rsvp-attendee-option";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = String(member);
+      checkbox.name = `rsvpAttendee${index}`;
+      checkbox.checked = true;
+      option.appendChild(checkbox);
+      option.appendChild(document.createTextNode(` ${String(member)}`));
+      attendeesListEl.appendChild(option);
+    });
+  };
+
+  const getSelectedGuests = () =>
+    Array.from(attendeesListEl.querySelectorAll('input[type="checkbox"]:checked')).map(
+      (input) => input.value
+    );
+
+  const postRsvp = async (payload) => {
+    const formBody = new URLSearchParams();
+    Object.entries(payload).forEach(([key, value]) => {
+      formBody.set(key, String(value ?? ""));
+    });
+
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      body: formBody,
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.json();
+  };
+
+  const performLookup = async () => {
+    const name = nameInput.value.trim();
+    resetLookupState();
+
+    if (!name) {
+      setStatus("rsvp_submit_validation_error", "error");
+      return false;
+    }
+
+    if (!apiUrl) {
+      setStatus("rsvp_lookup_error", "error");
+      return false;
+    }
+
+    setControlsDisabled(true);
+    setStatus("rsvp_lookup_searching", "loading");
+    try {
+      const data = await postRsvp({ action: "lookup", name });
+      if (!data || data.ok !== true) {
+        setStatus("rsvp_lookup_error", "error");
+        return false;
+      }
+      if (!data.found || !data.guest) {
+        setStatus("rsvp_lookup_not_found", "error");
+        return false;
+      }
+
+      guestRecord = data.guest;
+      foundGuestEl.textContent = guestRecord.displayName || guestRecord.name || name;
+      renderGuestGroup(guestRecord.guestGroup);
+      setExpandedState(true);
+
+      setStatus("rsvp_lookup_success", "success");
+      return true;
+    } catch (error) {
+      setStatus("rsvp_lookup_error", "error");
+      return false;
+    } finally {
+      setControlsDisabled(false);
+    }
+  };
+
+  lookupButton.addEventListener("click", async () => {
+    await performLookup();
+  });
+
+  nameInput.addEventListener("keydown", async (event) => {
+    if (event.key !== "Enter") {
+      return;
+    }
+    event.preventDefault();
+    await performLookup();
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!guestRecord) {
+      const wasFound = await performLookup();
+      if (!wasFound) {
+        return;
+      }
+    }
+
+    const selectedGuests = getSelectedGuests();
+    if (!guestRecord.guestGroup || !guestRecord.guestGroup.length) {
+      setStatus("rsvp_submit_validation_error", "error");
+      return;
+    }
+
+    const guestCount = selectedGuests.length;
+    const attendance = guestCount > 0 ? "yes" : "no";
+    if (!Number.isFinite(guestCount) || guestCount < 0) {
+      setStatus("rsvp_submit_validation_error", "error");
+      return;
+    }
+
+    if (!apiUrl) {
+      setStatus("rsvp_submit_error", "error");
+      return;
+    }
+
+    setControlsDisabled(true);
+    setStatus("rsvp_submit_sending", "loading");
+    try {
+      const data = await postRsvp({
+        action: "submit",
+        inviteId: guestRecord.id || guestRecord.inviteId || "",
+        guestName: guestRecord.displayName || guestRecord.name || nameInput.value.trim(),
+        lookupName: nameInput.value.trim(),
+        attendance,
+        guestCount,
+        selectedGuests: selectedGuests.join(", "),
+        message: messageEl.value.trim(),
+        language: currentLanguage,
+        submittedAt: new Date().toISOString(),
+      });
+
+      if (!data || !data.ok) {
+        if (data && data.error) {
+          console.error("RSVP submit error:", data.error, data);
+        }
+        setStatus("rsvp_submit_error", "error");
+        return;
+      }
+
+      setStatus("rsvp_submit_success", "success");
+      form.reset();
+      resetLookupState();
+    } catch (error) {
+      console.error("RSVP submit exception:", error);
+      setStatus("rsvp_submit_error", "error");
+    } finally {
+      setControlsDisabled(false);
+    }
+  });
+};
+
+const setupEntrySplash = () => {
+  const entrySplash = document.getElementById("entrySplash");
+  const entryButton = document.getElementById("entryButton");
+  const siteMain = document.querySelector(".site-main");
+  if (!entrySplash || !entryButton || !siteMain) {
+    return;
+  }
+
+  entryButton.addEventListener("click", () => {
+    const splashImg = entryButton.querySelector("img");
+    if (splashImg) {
+      splashImg.classList.add("is-rotating");
+    }
+
+    const isMobile = window.matchMedia("(max-width: 600px)").matches;
     const delay = isMobile ? 650 : 250;
     setTimeout(() => {
-      entrySplash.classList.add('is-hidden');
-      document.body.classList.remove('splash-open');
-      siteMain.classList.add('is-visible');
-      siteMain.setAttribute('aria-hidden', 'false');
-      entrySplash.setAttribute('aria-hidden', 'true');
-      setTimeout(() => { entrySplash.style.display = 'none'; }, 450);
+      entrySplash.classList.add("is-hidden");
+      document.body.classList.remove("splash-open");
+      siteMain.classList.add("is-visible");
+      siteMain.setAttribute("aria-hidden", "false");
+      entrySplash.setAttribute("aria-hidden", "true");
+      setTimeout(() => {
+        entrySplash.style.display = "none";
+      }, 450);
     }, delay);
   });
-}
+};
+
+setupNavigation();
+setupAccordion();
+setupCountdown();
+setupLanguageToggle();
+setupCountdownObserver();
+setupHeroParallax();
+setupHeroIntroAnimation();
+setupBackToTop();
+setupInteractiveRsvp();
+setupEntrySplash();
 
 
