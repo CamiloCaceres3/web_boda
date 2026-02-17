@@ -1,5 +1,8 @@
 const quizForm = document.querySelector(".quiz-form");
 const result = document.querySelector(".quiz-result");
+const quizQuestionSelector = ".quiz-question";
+const checkedAnswersSelector = `${quizQuestionSelector} input:checked`;
+const correctCheckedAnswerSelector = 'input[data-correct="true"]:checked';
 
 const getLanguage = () => {
   if (window.i18n && typeof window.i18n.getCurrentLanguage === "function") {
@@ -22,25 +25,29 @@ const formatMessage = (template, values) =>
     template
   );
 
-if (quizForm && result) {
-  quizForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+const getQuizStats = () => ({
+  totalQuestions: document.querySelectorAll(quizQuestionSelector).length,
+  correctAnswers: document.querySelectorAll(correctCheckedAnswerSelector).length,
+  answeredQuestions: document.querySelectorAll(checkedAnswersSelector).length,
+});
 
-    const totalQuestions = document.querySelectorAll(".quiz-question").length;
-    const correctAnswers = document.querySelectorAll('input[data-correct="true"]:checked').length;
-    const answeredQuestions = document.querySelectorAll(".quiz-question input:checked").length;
-
-    const scoreMessage = formatMessage(translate("quiz_result_score"), {
-      correct: correctAnswers,
-      total: totalQuestions,
-    });
-    const completionHint =
-      answeredQuestions < totalQuestions ? translate("quiz_result_completion_hint") : "";
-
-    if (correctAnswers >= 5) {
-      result.textContent = `${scoreMessage}${translate("quiz_result_success")}${completionHint}`;
-    } else {
-      result.textContent = `${scoreMessage}${translate("quiz_result_thanks")}${completionHint}`;
-    }
+const buildResultMessage = ({ totalQuestions, correctAnswers, answeredQuestions }) => {
+  const scoreMessage = formatMessage(translate("quiz_result_score"), {
+    correct: correctAnswers,
+    total: totalQuestions,
   });
+  const completionHint =
+    answeredQuestions < totalQuestions ? translate("quiz_result_completion_hint") : "";
+  const ending = correctAnswers >= 5 ? translate("quiz_result_success") : translate("quiz_result_thanks");
+
+  return `${scoreMessage}${ending}${completionHint}`;
+};
+
+const handleQuizSubmit = (event) => {
+  event.preventDefault();
+  result.textContent = buildResultMessage(getQuizStats());
+};
+
+if (quizForm && result) {
+  quizForm.addEventListener("submit", handleQuizSubmit);
 }

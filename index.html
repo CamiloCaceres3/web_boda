@@ -232,13 +232,38 @@
       </section>
 
       <section class="section" id="rsvp">
-        <div class="section-heading rsvp-block">
+        <div class="section-heading rsvp-block is-compact">
           <h2 data-i18n="rsvp_title">RSVP</h2>
           <p data-i18n="rsvp_text">Please respond by August 1, 2025.</p>
-          <div class="rsvp-actions">
-            <a class="primary-button rsvp-button" href="https://forms.gle/your-placeholder-form" target="_blank" rel="noreferrer" data-i18n="rsvp_button">
-              RSVP on Google Form
-            </a>
+          <form class="rsvp-form" id="rsvpForm" novalidate>
+            <div class="rsvp-row">
+              <label for="rsvpName" data-i18n="rsvp_name_label">Nombre completo</label>
+              <div class="rsvp-inline">
+                <input id="rsvpName" name="guestName" type="text" autocomplete="name" required data-i18n-placeholder="rsvp_name_placeholder" placeholder="Escribe tu nombre y apellido" />
+                <button type="button" class="primary-button rsvp-button" id="rsvpLookupButton" data-i18n="rsvp_lookup_button">Buscar invitacion</button>
+              </div>
+            </div>
+
+            <p class="rsvp-status" id="rsvpStatus" aria-live="polite" hidden></p>
+
+            <div class="rsvp-details is-collapsed" id="rsvpDetails" aria-hidden="true">
+              <p class="rsvp-found-name"><strong data-i18n="rsvp_found_guest">Invitado:</strong> <span id="rsvpFoundGuest"></span></p>
+
+              <div class="rsvp-row">
+                <p class="rsvp-attendees-title" data-i18n="rsvp_attendees_label">Quienes asistiran</p>
+                <p class="rsvp-attendees-hint" data-i18n="rsvp_attendees_hint">Selecciona las personas de tu grupo que asistiran.</p>
+                <div class="rsvp-attendees-list" id="rsvpAttendeesList"></div>
+              </div>
+
+              <div class="rsvp-row">
+                <label for="rsvpMessage" data-i18n="rsvp_message_label">Mensaje (opcional)</label>
+                <textarea id="rsvpMessage" name="message" rows="3" data-i18n-placeholder="rsvp_message_placeholder" placeholder="Escribe un mensaje para los novios"></textarea>
+              </div>
+
+              <button type="submit" class="primary-button rsvp-button" id="rsvpSubmitButton" data-i18n="rsvp_submit_button">Enviar RSVP</button>
+            </div>
+          </form>
+          <div class="rsvp-actions is-collapsed" id="rsvpActions" aria-hidden="true">
             <a
               class="text-link calendar-link rsvp-calendar"
               href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alejandra%20%26%20Camilo%20Wedding&dates=20260725T200000Z/20260726T030000Z&location=Hotel%20Estelar%20Centro%20de%20Convenciones%20Paipa,%20Boyac%C3%A1%20-%20Colombia&details=Celebraci%C3%B3n%20de%20la%20boda%20de%20Alejandra%20y%20Camilo"
@@ -283,7 +308,9 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-panel">
-            <p data-i18n="registry_honeymoon_text">Aporte para la luna de miel (por confirmar)</p>
+            <p data-i18n="registry_honeymoon_text">Opciones para aporte de luna de miel:</p>
+            <p><strong data-i18n="registry_colombia_title">Colombia</strong>: <span data-i18n="registry_colombia_text">Llave Bre-B: @camicace</span></p>
+            <p><strong data-i18n="registry_bank_title">Paises Bajos / Europa</strong>: <a href="https://revolut.me/camiloflij" target="_blank" rel="noopener" data-i18n="registry_link">https://revolut.me/camiloflij</a></p>
           </div>
         </div>
       </section>
@@ -846,6 +873,9 @@
       <a href="#top" class="text-link back-to-top" data-i18n="footer_back">Back to top</a>
     </footer>
 
+    <script>
+      window.RSVP_API_URL = "https://script.google.com/macros/s/AKfycby6BKBV758jy2oqgGKpPPQ1lpFY0gXKW8Xn5HeQDpMBof84w0PdzIvQ4bGSoDF3JpOAZg/exec";
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
