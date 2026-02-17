@@ -131,8 +131,8 @@ a {
   align-items: flex-start;
   justify-content: center;
   background: linear-gradient(180deg, rgba(255,255,255, 0.9), rgba(255,255,255, 0.3)),
-    url("../fotos/foto_inicio.jpeg") center / cover no-repeat;
-  padding: 6rem 1.5rem 0;
+    url("fotos/foto_inicio.jpeg") center / cover no-repeat;
+  padding: 6rem 1.5rem 4rem;
 }
 
 .hero-content {
@@ -1373,7 +1373,13 @@ a {
   }
 
   .full-width-photo--page::before {
-    content: none;
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+    background: url("fotos/fotosilla.jpeg") center / contain no-repeat;
+    box-shadow: var(--shadow);
   }
 }
 
