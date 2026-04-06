@@ -1092,6 +1092,33 @@ a {
   color: var(--olive);
 }
 
+.registry-list-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(76, 102, 87, 0.25);
+  border-radius: 999px;
+  background: rgba(140, 165, 149, 0.14);
+  color: var(--olive);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.registry-list-link::after {
+  content: "↗";
+  font-size: 0.95rem;
+}
+
+.registry-list-link:hover,
+.registry-list-link:focus-visible {
+  background: rgba(140, 165, 149, 0.24);
+  border-color: rgba(76, 102, 87, 0.4);
+  transform: translateY(-1px);
+}
+
 .list {
   list-style: none;
   display: grid;

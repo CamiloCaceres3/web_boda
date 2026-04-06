@@ -175,7 +175,7 @@ const dictionary = {
     faq_photos_a:
       "During the couple's entrance at the ceremony, at their request, it won't be possible to take photos or use cell phones.",
     rsvp_title: "RSVP",
-    rsvp_text: "Please respond by the date indicated on your invitation.",
+    rsvp_text: "We appreciate you confirming your attendance.",
     rsvp_name_label: "Full name",
     rsvp_name_placeholder: "Type your first and last name",
     rsvp_lookup_button: "Find invitation",
@@ -191,10 +191,17 @@ const dictionary = {
     rsvp_message_label: "Message (optional)",
     rsvp_message_placeholder: "Write a message for the couple",
     rsvp_submit_button: "Send RSVP",
+    rsvp_update_button: "Update RSVP",
     rsvp_lookup_searching: "Searching invitation...",
     rsvp_lookup_not_found: "We could not find your name. Please contact the couple.",
     rsvp_lookup_error: "Could not validate your invitation right now. Please try again.",
     rsvp_lookup_success: "Invitation found.",
+    rsvp_lookup_already_confirmed:
+      "You have already confirmed your attendance. You can change your status below.",
+    rsvp_lookup_already_canceled:
+      "You have already marked that you cannot attend. You can change your status below.",
+    rsvp_lookup_already_submitted:
+      "Your RSVP was already submitted. You can change your status below.",
     rsvp_submit_sending: "Sending your RSVP...",
     rsvp_submit_success: "Thanks! Your RSVP was saved.",
     rsvp_submit_error: "Your RSVP could not be saved. Please try again.",
@@ -203,7 +210,7 @@ const dictionary = {
     registry_title: "Gifts",
     registry_text: "We appreciate your presence, but if you'd like to contribute, here are the details:",
     registry_list_title: "Gift list",
-    registry_list_text: "Gift list (to be defined)",
+    registry_list_text: "View gift list",
     registry_honeymoon_title: "Honeymoon",
     registry_honeymoon_text: "Honeymoon contribution options:",
     registry_colombia_title: "Colombia",
@@ -439,7 +446,7 @@ const dictionary = {
     faq_photos_a:
       "En el momento de entrada de los novios en la ceremonia, por petición de los novios no es posible tomar fotos y/o sacar el celular.",
     rsvp_title: "RSVP",
-    rsvp_text: "Por favor responde en la fecha indicada en tu invitación.",
+    rsvp_text: "Agradecemos confirmar tu asistencia.",
     rsvp_name_label: "Nombre completo",
     rsvp_name_placeholder: "Escribe tu nombre y apellido",
     rsvp_lookup_button: "Buscar invitacion",
@@ -455,10 +462,16 @@ const dictionary = {
     rsvp_message_label: "Mensaje (opcional)",
     rsvp_message_placeholder: "Escribe un mensaje para los novios",
     rsvp_submit_button: "Enviar RSVP",
+    rsvp_update_button: "Actualizar RSVP",
     rsvp_lookup_searching: "Buscando invitacion...",
     rsvp_lookup_not_found: "No encontramos tu nombre. Por favor contacta a los novios.",
     rsvp_lookup_error: "No pudimos validar tu invitacion en este momento. Intenta de nuevo.",
     rsvp_lookup_success: "Invitacion encontrada.",
+    rsvp_lookup_already_confirmed:
+      "Ya confirmaste tu asistencia. Puedes cambiar tu estado abajo.",
+    rsvp_lookup_already_canceled:
+      "Ya marcaste que no podras asistir. Puedes cambiar tu estado abajo.",
+    rsvp_lookup_already_submitted: "Tu RSVP ya fue enviado. Puedes cambiar tu estado abajo.",
     rsvp_submit_sending: "Enviando tu RSVP...",
     rsvp_submit_success: "Gracias. Tu respuesta quedo guardada.",
     rsvp_submit_error: "No pudimos guardar tu RSVP. Intenta de nuevo.",
@@ -467,7 +480,7 @@ const dictionary = {
     registry_title: "Regalos",
     registry_text: "Agradecemos su presencia, pero si desean contribuir estos son los datos:",
     registry_list_title: "Lista de regalos",
-    registry_list_text: "Lista de regalos (por confirmar)",
+    registry_list_text: "Ver lista de regalos",
     registry_honeymoon_title: "Luna de miel",
     registry_honeymoon_text: "Opciones para aporte de luna de miel:",
     registry_colombia_title: "Colombia",
@@ -785,6 +798,10 @@ const setupInteractiveRsvp = () => {
     statusEl.hidden = false;
   };
 
+  const setSubmitButtonLabel = (key) => {
+    submitButton.textContent = translate(key);
+  };
+
   const setExpandedState = (isExpanded) => {
     rsvpBlockEl.classList.toggle("is-compact", !isExpanded);
     rsvpBlockEl.classList.toggle("is-expanded", isExpanded);
@@ -803,6 +820,7 @@ const setupInteractiveRsvp = () => {
     statusEl.hidden = true;
     statusEl.textContent = "";
     statusEl.dataset.state = "";
+    setSubmitButtonLabel("rsvp_submit_button");
     setExpandedState(false);
   };
 
@@ -834,6 +852,39 @@ const setupInteractiveRsvp = () => {
     Array.from(attendeesListEl.querySelectorAll('input[type="checkbox"]:checked')).map(
       (input) => input.value
     );
+
+  const applyPreviousResponse = (latestResponse) => {
+    if (!latestResponse || typeof latestResponse !== "object") {
+      return;
+    }
+
+    const selectedFromResponse = Array.isArray(latestResponse.selectedGuests)
+      ? latestResponse.selectedGuests.map((name) => String(name).trim()).filter(Boolean)
+      : [];
+    const selectedSet = new Set(selectedFromResponse);
+    const checkboxes = Array.from(attendeesListEl.querySelectorAll('input[type="checkbox"]'));
+
+    if (selectedSet.size > 0) {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = selectedSet.has(checkbox.value);
+      });
+    } else if (latestResponse.attendance === "no") {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+    } else if (latestResponse.attendance === "yes") {
+      const requestedCount = Number(latestResponse.guestCount);
+      if (Number.isFinite(requestedCount) && requestedCount >= 0) {
+        checkboxes.forEach((checkbox, index) => {
+          checkbox.checked = index < requestedCount;
+        });
+      }
+    }
+
+    if (typeof latestResponse.message === "string" && latestResponse.message.trim()) {
+      messageEl.value = latestResponse.message.trim();
+    }
+  };
 
   const postRsvp = async (payload) => {
     const formBody = new URLSearchParams();
@@ -882,8 +933,21 @@ const setupInteractiveRsvp = () => {
       foundGuestEl.textContent = guestRecord.displayName || guestRecord.name || name;
       renderGuestGroup(guestRecord.guestGroup);
       setExpandedState(true);
+      setSubmitButtonLabel("rsvp_submit_button");
 
-      setStatus("rsvp_lookup_success", "success");
+      if (guestRecord.latestResponse) {
+        applyPreviousResponse(guestRecord.latestResponse);
+        setSubmitButtonLabel("rsvp_update_button");
+        if (guestRecord.latestResponse.attendance === "yes") {
+          setStatus("rsvp_lookup_already_confirmed", "success");
+        } else if (guestRecord.latestResponse.attendance === "no") {
+          setStatus("rsvp_lookup_already_canceled", "success");
+        } else {
+          setStatus("rsvp_lookup_already_submitted", "success");
+        }
+      } else {
+        setStatus("rsvp_lookup_success", "success");
+      }
       return true;
     } catch (error) {
       setStatus("rsvp_lookup_error", "error");

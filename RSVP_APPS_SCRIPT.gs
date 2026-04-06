@@ -100,10 +100,15 @@ function handleLookup(body) {
       (normalizedFromAlias && normalizedFromAlias === normalizedQuery);
 
     if (exactMatch) {
+      const guest = buildGuestResponse(row, idIndex, nameIndex, maxGuestsIndex, rows);
+      const latestResponse = getLatestResponseForInviteId(spreadsheet, guest.id);
+      if (latestResponse) {
+        guest.latestResponse = latestResponse;
+      }
       return {
         ok: true,
         found: true,
-        guest: buildGuestResponse(row, idIndex, nameIndex, maxGuestsIndex, rows),
+        guest: guest,
       };
     }
 
@@ -117,10 +122,15 @@ function handleLookup(body) {
   }
 
   if (bestContainsMatch) {
+    const guest = buildGuestResponse(bestContainsMatch, idIndex, nameIndex, maxGuestsIndex, rows);
+    const latestResponse = getLatestResponseForInviteId(spreadsheet, guest.id);
+    if (latestResponse) {
+      guest.latestResponse = latestResponse;
+    }
     return {
       ok: true,
       found: true,
-      guest: buildGuestResponse(bestContainsMatch, idIndex, nameIndex, maxGuestsIndex, rows),
+      guest: guest,
       matchType: "partial",
     };
   }
@@ -156,6 +166,98 @@ function getGuestGroup(rows, householdId, idIndex, nameIndex) {
     }
   }
   return members;
+}
+
+function getLatestResponseForInviteId(spreadsheet, inviteId) {
+  const normalizedInviteId = String(inviteId || "").trim();
+  if (!normalizedInviteId) {
+    return null;
+  }
+
+  const responsesSheet = findSheetByName(spreadsheet, RESPONSES_SHEET);
+  if (!responsesSheet) {
+    return null;
+  }
+
+  const rows = responsesSheet.getDataRange().getValues();
+  if (rows.length <= 1) {
+    return null;
+  }
+
+  const headers = rows[0].map((h) => normalizeHeader(h));
+  const inviteIdIndex = findHeaderIndex(headers, ["invite_id", "inviteid", "id", "codigo"]);
+  const attendanceIndex = findHeaderIndex(headers, ["attendance", "asistencia", "status", "estado"]);
+  const guestCountIndex = findHeaderIndex(headers, ["guest_count", "guestcount", "numero_asistentes"]);
+  const selectedGuestsIndex = findHeaderIndex(headers, [
+    "selected_guests",
+    "selectedguests",
+    "invitados_seleccionados",
+  ]);
+  const messageIndex = findHeaderIndex(headers, ["message", "mensaje"]);
+  const submittedAtIndex = findHeaderIndex(headers, ["submitted_at", "submittedat", "fecha_envio"]);
+
+  if (inviteIdIndex < 0 || attendanceIndex < 0) {
+    return null;
+  }
+
+  let latestRow = null;
+  for (let i = 1; i < rows.length; i += 1) {
+    const row = rows[i];
+    const rowInviteId = String(row[inviteIdIndex] || "").trim();
+    if (rowInviteId === normalizedInviteId) {
+      latestRow = row;
+    }
+  }
+
+  if (!latestRow) {
+    return null;
+  }
+
+  const attendance = normalizeAttendanceValue(latestRow[attendanceIndex]);
+  const guestCountRaw = Number(guestCountIndex >= 0 ? latestRow[guestCountIndex] : NaN);
+  const guestCount = Number.isFinite(guestCountRaw) ? Math.max(0, guestCountRaw) : 0;
+  const selectedGuestsRaw = String(
+    selectedGuestsIndex >= 0 ? latestRow[selectedGuestsIndex] || "" : ""
+  );
+  const selectedGuests = selectedGuestsRaw
+    .split(",")
+    .map((name) => String(name || "").trim())
+    .filter(Boolean);
+
+  return {
+    attendance: attendance,
+    guestCount: guestCount,
+    selectedGuests: selectedGuests,
+    message: String(messageIndex >= 0 ? latestRow[messageIndex] || "" : "").trim(),
+    submittedAt: String(submittedAtIndex >= 0 ? latestRow[submittedAtIndex] || "" : "").trim(),
+  };
+}
+
+function normalizeAttendanceValue(value) {
+  const normalized = normalizeName(value).replace(/\s+/g, "");
+  if (
+    normalized === "yes" ||
+    normalized === "si" ||
+    normalized === "s" ||
+    normalized === "attending" ||
+    normalized === "confirmado" ||
+    normalized === "confirmada" ||
+    normalized === "true" ||
+    normalized === "1"
+  ) {
+    return "yes";
+  }
+  if (
+    normalized === "no" ||
+    normalized === "declined" ||
+    normalized === "cancelled" ||
+    normalized === "canceled" ||
+    normalized === "false" ||
+    normalized === "0"
+  ) {
+    return "no";
+  }
+  return "";
 }
 
 function isPartialNameMatch(query, candidate) {
