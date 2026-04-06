@@ -170,10 +170,10 @@ const dictionary = {
     faq_title: "Important details",
     faq_attire_q: "What should I wear?",
     faq_attire_a:
-      "Long dress / formal suit. Examples: formal suit, tie (no bow tie), and formal shoes. Long dress (reserved color: olive green), chunky heels since the ceremony will be outdoors. Don't forget a change of shoes to dance all night.",
+      "Dress code: formal. For men: a formal suit with a tie (no bow tie) and dress shoes. For women: a long dress and block heels, as the ceremony will take place in an outdoor countryside setting. We recommend bringing a change of comfortable shoes to enjoy and dance the night away.",
     faq_photos_q: "Can I take photos?",
     faq_photos_a:
-      "During the couple's entrance at the ceremony, at their request, it won't be possible to take photos or use cell phones.",
+      "Throughout our ceremony, we have chosen to experience this moment in an intimate and unplugged way, so we kindly ask you not to take photos or use your mobile phone. For the rest of the day, feel free to take pictures, record videos, and share anything you'd like from our wedding.",
     rsvp_title: "RSVP",
     rsvp_text: "We appreciate you confirming your attendance.",
     rsvp_name_label: "Full name",
@@ -270,7 +270,7 @@ const dictionary = {
     quiz_result_success: " Congratulations for knowing the couple!",
     quiz_result_thanks: " Thanks for participating.",
     photo_caption: "Eight years later, still worth it.",
-    footer_contact: "Questions? Email us at alecamimatri@gmail.com tel: to be defined",
+    footer_contact: "Questions? Email us at alecamimatri@gmail.com tel: +57 300 319 7048",
     footer_credit: "Made by Cami and Ale with vibecoding 😄",
     footer_back: "Back to top",
   },
@@ -441,10 +441,10 @@ const dictionary = {
     faq_title: "Datos importantes",
     faq_attire_q: "¿Qué debo vestir?",
     faq_attire_a:
-      "Vestido Largo / Traje Formal. Ejemplos: traje formal, corbata (sin corbatín), zapatos formales. Vestido largo (color reservado: verde oliva), tacón grueso ya que la ceremonia será en zona campestre. No olvidar zapatos de cambio para poder bailar toda la noche.",
+      "Vestimenta: formal. Para ellos: traje formal con corbata (sin corbatín) y zapatos elegantes. Para ellas: vestido largo y tacón grueso, ya que la ceremonia se realizará en una zona campestre. Recomendamos llevar un cambio de zapatos cómodos para disfrutar y bailar toda la noche.",
     faq_photos_q: "¿Puedo tomar fotos?",
     faq_photos_a:
-      "En el momento de entrada de los novios en la ceremonia, por petición de los novios no es posible tomar fotos y/o sacar el celular.",
+      "Durante toda nuestra ceremonia, hemos decidido vivir ese momento de forma íntima y sin pantallas, por lo que te agradecemos no tomar fotografías ni utilizar el teléfono móvil. El resto del día, siéntete libre de grabar, tomar fotos y compartir todo lo que quieras de nuestro matrimonio.",
     rsvp_title: "RSVP",
     rsvp_text: "Agradecemos confirmar tu asistencia.",
     rsvp_name_label: "Nombre completo",
@@ -540,7 +540,7 @@ const dictionary = {
     quiz_result_success: " ¡Felicitaciones por conocer a los novios!",
     quiz_result_thanks: " Gracias por participar.",
     photo_caption: "Ocho años después, sigue valiendo la pena.",
-    footer_contact: "¿Preguntas? Escríbenos a alecamimatri@gmail.com tel: por definir",
+    footer_contact: "¿Preguntas? Escríbenos a alecamimatri@gmail.com tel: +57 300 319 7048",
     footer_credit: "Hecho por Cami y Ale con vibecoding 😄",
     footer_back: "Volver arriba",
   },
